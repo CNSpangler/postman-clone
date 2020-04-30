@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component renders Form  1`] = `
+<form>
+  <input
+    id="URL"
+    placeholder="URL"
+    type="text"
+  />
+  <label
+    htmlFor="GET"
+  >
+    GET
+  </label>
+  <input
+    id="GET"
+    name="HTTP"
+    type="radio"
+    value="GET"
+  />
+  <label
+    htmlFor="POST"
+  >
+    POST
+  </label>
+  <input
+    id="POST"
+    name="HTTP"
+    type="radio"
+    value="POST"
+  />
+  <label
+    htmlFor="GET"
+  >
+    PUT
+  </label>
+  <input
+    id="PUT"
+    name="HTTP"
+    type="radio"
+    value="PUT"
+  />
+  <label
+    htmlFor="GET"
+  >
+    PATCH
+  </label>
+  <input
+    id="PATCH"
+    name="HTTP"
+    type="radio"
+    value="PATCH"
+  />
+  <label
+    htmlFor="GET"
+  >
+    DELETE
+  </label>
+  <input
+    id="DELETE"
+    name="HTTP"
+    type="radio"
+    value="DELETE"
+  />
+  <input
+    name="body"
+    placeholder="Raw JSON Body"
+    type="textarea"
+  />
+  <button>
+    Go!
+  </button>
+</form>
+`;
