@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../Header/Header.jsx';
-import Form from '../Form/Form.jsx';
+import InteractionPane from '../../containers/FormContainer/InteractionPane.jsx';
 
 export default function App() {
   return (
     <>
       <Header />
-      <Form />
+      <InteractionPane />
     </>
   );
 }

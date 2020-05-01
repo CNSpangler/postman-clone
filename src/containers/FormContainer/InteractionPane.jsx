@@ -6,22 +6,32 @@
 //    sets results in state
 // results pane reads state and automatically updates
 
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import Form from '../../components/Form/Form.jsx';
 
-const InteractionPane = () => {
-  const [url, setUrl] = useState();
-  const [radio, setRadio] = useState();
+export default class InteractionPane extends Component {
+  state = {
+    url: '',
+    method: 'POST',
+    body: ''
+  }
 
-  useEffect(() => {
-    
-  }, []);
+  handleUrlChange = () => {};
+  // handleMethodChange = () => {};
+  // handleBodyChange = () => {};
 
-  return (
-    <>
-      <Form />
-    </>
-  );
-};
+  // handleSubmit = () => {
+  //   makeRequest(this.state.url, this.state.method, this.state.body)
+  //     .then(response => set response in state)
+  // }
+  
+  render() {
+    const { url, method, body } = this.state;
 
-export default InteractionPane;
+    return (
+      <>
+        <Form url={url} method={method} body={body} />
+      </>
+    );
+  }
+}

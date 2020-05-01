@@ -1,21 +1,52 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Form = () => (
-  <form>
-    <input type="text" id="URL" placeholder="URL" />
-    <label htmlFor="GET">GET</label>
-    <input type="radio" name="HTTP" id="GET" value="GET" />
-    <label htmlFor="POST">POST</label>
-    <input type="radio" name="HTTP" id="POST" value="POST" />
-    <label htmlFor="PUT">PUT</label>
-    <input type="radio" name="HTTP" id="PUT" value="PUT" /> 
-    <label htmlFor="PATCH">PATCH</label>
-    <input type="radio" name="HTTP" id="PATCH" value="PATCH" />
-    <label htmlFor="DELETE">DELETE</label>
-    <input type="radio" name="HTTP" id="DELETE" value="DELETE" />
-    <input type="textarea" name="body" placeholder="Raw JSON Body" />
-    <button>Go!</button>
+/* eslint-disable react/prop-types */
+const RadioGroup = ({ name, onChange, children }) => {
+  const radioButtonsWithNameAndOnChange = React.Children.map(children, child => {
+    return React.cloneElement(child, {
+      name,
+      onChange
+    });
+  });
+
+  return (
+    <>
+      {radioButtonsWithNameAndOnChange}
+    </>
+  );
+};
+
+const RadioButton = ({ name, value, onChange }) => (
+  <>
+    <input id={value} type="radio" name={name} value={value} onChange={onChange} />
+    <label htmlFor={value}>{value}</label>
+  </>
+);
+
+/* eslint-enable react/prop-types */
+const Form = (url, onUrlChange, body, onBodyChange, onMethodChange, onSubmit) => (
+  <form onSubmit={onSubmit}>
+    <input type="text" value={url} placeholder="URL" onChange={onUrlChange} />
+    <RadioGroup name="method" onChange={onMethodChange}>
+      <RadioButton value="POST" />
+      <RadioButton value="GET" />
+      <RadioButton value="PATCH" />
+      <RadioButton value="PUT" />
+      <RadioButton value="DELETE" />
+    </RadioGroup>
+    <input type="textarea" value={body} placeholder="Raw JSON Body" onChange={onBodyChange} />
+    <button>Submit</button>
   </form>
 );
+
+Form.propTypes = {
+  url: PropTypes.string.isRequired,
+  onUrlChange: PropTypes.func.isRequired,
+  body: PropTypes.object.isRequired,
+  onBodyChange: PropTypes.func.isRequired,
+  onMethodChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired
+};
 
 export default Form;
