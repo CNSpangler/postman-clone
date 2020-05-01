@@ -6,32 +6,37 @@
 //    sets results in state
 // results pane reads state and automatically updates
 
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Form from '../../components/Form/Form.jsx';
 
-export default class InteractionPane extends Component {
-  state = {
-    url: '',
-    method: 'POST',
-    body: ''
-  }
+const InteractionPane = () => {
+  const [url, setUrl] = useState();
+  const [body, setBody] = useState();
+  const [method, setMethod] = useState();
+  const [response, setResponse] = useState();
 
-  handleUrlChange = () => {};
-  // handleMethodChange = () => {};
-  // handleBodyChange = () => {};
+  handleUrlChange = ({ target }) => {
+    setUrl(target.value);
+  };
 
-  // handleSubmit = () => {
-  //   makeRequest(this.state.url, this.state.method, this.state.body)
-  //     .then(response => set response in state)
-  // }
+  handleMethodChange = ({ target }) => {
+    setMethod(target.value);
+  };
+
+  handleBodyChange = ({ target }) => {
+    setBody(target.value);
+  };
+
+  handleSubmit = () => {
+    makeRequest(url, method, body)
+      .then(response => setResponse(response));
+  };
   
-  render() {
-    const { url, method, body } = this.state;
+  return (
+    <>
+      <Form url={url} method={method} body={body} onUrlChange={handleUrlChange} onMethodChange={handleMethodChange} onBodyChange={handleBodyChange} onSubmit={handleSubmit}/>
+    </>
+  );
+};
 
-    return (
-      <>
-        <Form url={url} method={method} body={body} />
-      </>
-    );
-  }
-}
+export default InteractionPane;
