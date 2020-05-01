@@ -7,11 +7,11 @@ const Form = () => (
     <input type="radio" name="HTTP" id="GET" value="GET" />
     <label htmlFor="POST">POST</label>
     <input type="radio" name="HTTP" id="POST" value="POST" />
-    <label htmlFor="GET">PUT</label>
+    <label htmlFor="PUT">PUT</label>
     <input type="radio" name="HTTP" id="PUT" value="PUT" /> 
-    <label htmlFor="GET">PATCH</label>
+    <label htmlFor="PATCH">PATCH</label>
     <input type="radio" name="HTTP" id="PATCH" value="PATCH" />
-    <label htmlFor="GET">DELETE</label>
+    <label htmlFor="DELETE">DELETE</label>
     <input type="radio" name="HTTP" id="DELETE" value="DELETE" />
     <input type="textarea" name="body" placeholder="Raw JSON Body" />
     <button>Go!</button>
