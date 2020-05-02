@@ -45,7 +45,7 @@ const InteractionPane = () => {
 
       {results && <Results results={results} />}
 
-      {history && <History history={history} />}
+      <History history={history} />
     </>
   );
 };

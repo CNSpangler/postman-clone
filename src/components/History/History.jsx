@@ -2,13 +2,11 @@ import React from 'react';
 import HistoryItem from '../HistoryItem/HistoryItem.jsx';
 import PropTypes from 'prop-types';
 
-const History = ({ history }) => {
+const History = ({ history = [{ url: 'test', method: 'GET', body: 'test' }, { url: 'test', method: 'GET', body: 'test' }] }) => {
   const historyItems = history.map(item => {
-    { history && 
-      <li key={item.userId}>
-        <HistoryItem {...item} />
-      </li>;
-    }
+    <li key={item.userId}>
+      <HistoryItem {...item} />
+    </li>;
   });
 
   return (
