@@ -8,6 +8,7 @@
 
 import React, { useState } from 'react';
 import Form from '../../components/Form/Form.jsx';
+import Results from '../../components/Results/Results.jsx';
 
 const InteractionPane = () => {
   const [url, setUrl] = useState();
@@ -15,19 +16,19 @@ const InteractionPane = () => {
   const [method, setMethod] = useState();
   const [response, setResponse] = useState();
 
-  handleUrlChange = ({ target }) => {
+  const handleUrlChange = ({ target }) => {
     setUrl(target.value);
   };
 
-  handleMethodChange = ({ target }) => {
+  const handleMethodChange = ({ target }) => {
     setMethod(target.value);
   };
 
-  handleBodyChange = ({ target }) => {
+  const handleBodyChange = ({ target }) => {
     setBody(target.value);
   };
 
-  handleSubmit = () => {
+  const handleSubmit = () => {
     makeRequest(url, method, body)
       .then(response => setResponse(response));
   };
@@ -35,6 +36,7 @@ const InteractionPane = () => {
   return (
     <>
       <Form url={url} method={method} body={body} onUrlChange={handleUrlChange} onMethodChange={handleMethodChange} onBodyChange={handleBodyChange} onSubmit={handleSubmit}/>
+      <Results />
     </>
   );
 };

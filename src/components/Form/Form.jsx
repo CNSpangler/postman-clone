@@ -25,7 +25,7 @@ const RadioButton = ({ name, value, onChange }) => (
 );
 
 /* eslint-enable react/prop-types */
-const Form = (url, onUrlChange, body, onBodyChange, onMethodChange, onSubmit) => (
+const Form = ({ url, onUrlChange, body, onBodyChange, onMethodChange, onSubmit }) => (
   <form onSubmit={onSubmit}>
     <input type="text" value={url} placeholder="URL" onChange={onUrlChange} />
     <RadioGroup name="method" onChange={onMethodChange}>
