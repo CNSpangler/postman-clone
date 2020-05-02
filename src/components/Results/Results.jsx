@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactJson from 'react-json-view';
 
 const Results = ({ results }) => (
   <>
-    <input type="textarea">{results}</input>
+    <ReactJson src={results} />
   </>
 );
 
-Results.proptypes = {
-  results: PropTypes.object
+Results.propTypes = {
+  results: PropTypes.string
 };
 
 export default Results;

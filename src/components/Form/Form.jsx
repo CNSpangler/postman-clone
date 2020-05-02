@@ -43,7 +43,7 @@ const Form = ({ url, onUrlChange, body, onBodyChange, onMethodChange, onSubmit }
 Form.propTypes = {
   url: PropTypes.string.isRequired,
   onUrlChange: PropTypes.func.isRequired,
-  body: PropTypes.object.isRequired,
+  body: PropTypes.any,
   onBodyChange: PropTypes.func.isRequired,
   onMethodChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired

@@ -9,13 +9,13 @@
 import React, { useState } from 'react';
 import Form from '../../components/Form/Form.jsx';
 import Results from '../../components/Results/Results.jsx';
-import makeRequest from '../../services/fetch.js';
+import { makeRequest } from '../../services/fetch.js';
 
 const InteractionPane = () => {
-  const [url, setUrl] = useState();
-  const [body, setBody] = useState();
-  const [method, setMethod] = useState();
-  const [response, setResponse] = useState();
+  const [url, setUrl] = useState('');
+  const [body, setBody] = useState('');
+  const [method, setMethod] = useState('');
+  const [results, setResults] = useState('');
 
   const handleUrlChange = ({ target }) => {
     setUrl(target.value);
@@ -29,15 +29,16 @@ const InteractionPane = () => {
     setBody(target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     makeRequest(url, method, body)
-      .then(response => setResponse(response));
+      .then(response => setResults(response));
   };
   
   return (
     <>
       <Form url={url} method={method} body={body} onUrlChange={handleUrlChange} onMethodChange={handleMethodChange} onBodyChange={handleBodyChange} onSubmit={handleSubmit}/>
-      <Results />
+      {results && <Results results={results} />}
     </>
   );
 };
