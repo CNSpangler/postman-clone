@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 
 const History = ({ history }) => {
   const historyItems = history.map(item => {
-    <li key={item.userId}>
-      <HistoryItem {...item} />
-    </li>;
+    { history && 
+      <li key={item.userId}>
+        <HistoryItem {...item} />
+      </li>;
+    }
   });
 
   return (

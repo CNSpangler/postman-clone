@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Form from '../../components/Form/Form.jsx';
 import Results from '../../components/Results/Results.jsx';
-import History from '../../components/History.jsx';
+import History from '../../components/History/History.jsx';
 import { makeRequest } from '../../services/fetch.js';
 
 const InteractionPane = () => {
