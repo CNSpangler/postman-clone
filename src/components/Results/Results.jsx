@@ -9,7 +9,7 @@ const Results = ({ results }) => (
 );
 
 Results.propTypes = {
-  results: PropTypes.string
+  results: PropTypes.any
 };
 
 export default Results;

@@ -3,10 +3,8 @@
 exports[`Form component renders Form  1`] = `
 <form>
   <input
-    onChange={Object {}}
     placeholder="URL"
     type="text"
-    value={Object {}}
   />
   <RadioGroup
     name="method"
