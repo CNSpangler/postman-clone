@@ -9,6 +9,7 @@
 import React, { useState } from 'react';
 import Form from '../../components/Form/Form.jsx';
 import Results from '../../components/Results/Results.jsx';
+import makeRequest from '../../services/fetch.js';
 
 const InteractionPane = () => {
   const [url, setUrl] = useState();
