@@ -3,72 +3,36 @@
 exports[`Form component renders Form  1`] = `
 <form>
   <input
-    id="URL"
+    onChange={Object {}}
     placeholder="URL"
     type="text"
+    value={Object {}}
   />
-  <label
-    htmlFor="GET"
+  <RadioGroup
+    name="method"
   >
-    GET
-  </label>
+    <RadioButton
+      value="POST"
+    />
+    <RadioButton
+      value="GET"
+    />
+    <RadioButton
+      value="PATCH"
+    />
+    <RadioButton
+      value="PUT"
+    />
+    <RadioButton
+      value="DELETE"
+    />
+  </RadioGroup>
   <input
-    id="GET"
-    name="HTTP"
-    type="radio"
-    value="GET"
-  />
-  <label
-    htmlFor="POST"
-  >
-    POST
-  </label>
-  <input
-    id="POST"
-    name="HTTP"
-    type="radio"
-    value="POST"
-  />
-  <label
-    htmlFor="GET"
-  >
-    PUT
-  </label>
-  <input
-    id="PUT"
-    name="HTTP"
-    type="radio"
-    value="PUT"
-  />
-  <label
-    htmlFor="GET"
-  >
-    PATCH
-  </label>
-  <input
-    id="PATCH"
-    name="HTTP"
-    type="radio"
-    value="PATCH"
-  />
-  <label
-    htmlFor="GET"
-  >
-    DELETE
-  </label>
-  <input
-    id="DELETE"
-    name="HTTP"
-    type="radio"
-    value="DELETE"
-  />
-  <input
-    name="body"
     placeholder="Raw JSON Body"
     type="textarea"
   />
   <button>
-    Go!
+    Submit
   </button>
 </form>
 `;
