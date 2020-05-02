@@ -41,10 +41,16 @@ const InteractionPane = () => {
       }
     ]));
   };
+
+  // {
+  //   "title": "foo",
+  //   "body": "bar",
+  //   "userId": 1
+  // }
   
   return (
     <>
-      <Form url={url} method={method} body={body} onUrlChange={handleUrlChange} onMethodChange={handleMethodChange} onBodyChange={handleBodyChange} onSubmit={handleSubmit}/>
+      <Form url={url} method={method} body={body} results={results} onUrlChange={handleUrlChange} onMethodChange={handleMethodChange} onBodyChange={handleBodyChange} onSubmit={handleSubmit}/>
 
       {results && <Results results={results} />}
 
