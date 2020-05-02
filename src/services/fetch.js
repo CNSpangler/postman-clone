@@ -1,11 +1,19 @@
 export const makeRequest = (url, method, body) => {
+  
   return fetch(url, {
-    method: method,
-    body: (method === 'GET' || method === 'DELETE') ? null : JSON.stringify(body),
-
+    method, 
+    body: (method === 'GET' || method === 'DELETE') ? null : JSON.stringify(JSON.parse(body)),
     headers: {
       'Content-type': 'application/json; charset=UTF-8'
-    }
+    } 
   })
-    .then(res => res.json());
+    .then(res => res.json())
+    .catch(err => console.log(err));
 };
+
+
+// {
+//   "title": "foo",
+//   "body": "bar",
+//   "userId": 1
+// }

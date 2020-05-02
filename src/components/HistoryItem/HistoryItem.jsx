@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactJson from 'react-json-view';
 
-const HistoryItem = ({ url, method, body }) => {
-  <>
-    <p>{url}</p>
-    <p>{method}</p>
-    <p>{body}</p>
-  </>;
+const HistoryItem = ({ item }) => {
+  <ReactJson src={item} />;
 };
 
 HistoryItem.propTypes = {
