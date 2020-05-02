@@ -13,8 +13,8 @@ import { makeRequest } from '../../services/fetch.js';
 
 const InteractionPane = () => {
   const [url, setUrl] = useState('');
-  const [body, setBody] = useState('');
-  const [method, setMethod] = useState('');
+  const [body, setBody] = useState(null);
+  const [method, setMethod] = useState('GET');
   const [results, setResults] = useState('');
 
   const handleUrlChange = ({ target }) => {
@@ -32,7 +32,7 @@ const InteractionPane = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    makeRequest(url, method, body)
+    makeRequest(url, method)
       .then(response => setResults(response));
   };
   
