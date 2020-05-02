@@ -31,6 +31,7 @@ const InteractionPane = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     makeRequest(url, method, body)
       .then(response => setResults(response));
   };
