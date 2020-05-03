@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../App/App.css';
 
-const Header = ({title = 'Patchman'}) => (
-  <>
+const Header = ({ title = 'Patchman' }) => (
+  <div className={styles.Header}>
     <h1>{title}</h1>
-  </>
+  </div>
 );
 
-Header.proptypes = {
+Header.propTypes = {
   title: PropTypes.string
 };
 

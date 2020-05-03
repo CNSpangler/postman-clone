@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1.3fr 1.2fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "Header Header Header Header" "History Form Form Form" "History Results Results Results" "History Results Results Results";
+}
+
+.Header { 
+  grid-area: Header;
+}
+
+.Form { 
+  grid-area: Form;
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.2fr 2.3fr;
+    gap: 1px 1px;
+    grid-template-areas: "radioGroup radioGroup radioGroup radioGroup" "url url url url" "body body headers headers";
+  }
+  
+  .radioGroup { grid-area: radioGroup; }
+  
+  .url { grid-area: url; }
+  
+  .body { grid-area: body; }
+  
+  .headers { grid-area: headers; }
+}
+
+.Results { 
+  grid-area: Results;
+}
+
+.History { 
+  grid-area: History;
+}

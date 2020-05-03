@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import HistoryItem from '../HistoryItem/HistoryItem.jsx';
 import ReactJson from 'react-json-view';
+import styles from '../App/App.css';
 
 const History = ({ history }) => {
   return (
-    <ReactJson src={history} />
+    <ReactJson src={history} className={styles.History}/>
   );
   // const historyItems = history.map(item => (
   //   <li key={item.id}>

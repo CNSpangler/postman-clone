@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../App/App.css';
 
 /* eslint-disable react/prop-types */
 const RadioGroup = ({ name, onChange, children }) => {
@@ -26,9 +27,9 @@ const RadioButton = ({ name, value, onChange }) => (
 
 /* eslint-enable react/prop-types */
 const Form = ({ url, onUrlChange, body, onBodyChange, onMethodChange, onSubmit }) => (
-  <form onSubmit={onSubmit}>
+  <form onSubmit={onSubmit} className={styles.Form}>
     <input type="text" value={url} placeholder="URL" onChange={onUrlChange} />
-    <RadioGroup name="method" onChange={onMethodChange}>
+    <RadioGroup name="method" onChange={onMethodChange} classname={styles.radioGroup}>
       <RadioButton value="POST" />
       <RadioButton value="GET" />
       <RadioButton value="PATCH" />
