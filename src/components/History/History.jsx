@@ -1,13 +1,13 @@
 import React from 'react';
-import HistoryItem from '../HistoryItem/HistoryItem.jsx';
 import PropTypes from 'prop-types';
+import HistoryItem from '../HistoryItem/HistoryItem.jsx';
 
-const History = ({ history = [{ url: 'test', method: 'GET', body: 'test' }, { url: 'test', method: 'GET', body: 'test' }] }) => {
-  const historyItems = history.map(item => {
-    <li key={item.userId}>
+const History = ({ history }) => {
+  const historyItems = history.map(item => (
+    <li key={item.title}>
       <HistoryItem {...item} />
-    </li>;
-  });
+    </li>
+  ));
 
   return (
     <ul>
@@ -18,8 +18,8 @@ const History = ({ history = [{ url: 'test', method: 'GET', body: 'test' }, { ur
 
 History.propTypes = {
   history: PropTypes.arrayOf(PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    method: PropTypes.string.isRequired,
+    url: PropTypes.string,
+    method: PropTypes.string,
     body: PropTypes.any
   }))
 };

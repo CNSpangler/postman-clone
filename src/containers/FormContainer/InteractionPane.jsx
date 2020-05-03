@@ -7,7 +7,7 @@ import { makeRequest } from '../../services/fetch.js';
 const InteractionPane = () => {
   // instantiate state
   const [url, setUrl] = useState('');
-  const [body, setBody] = useState(null);
+  const [body, setBody] = useState('');
   const [method, setMethod] = useState('GET');
   const [results, setResults] = useState('');
   const [history, setHistory] = useState([]);
@@ -46,7 +46,7 @@ const InteractionPane = () => {
     <>
       <Form url={url} method={method} body={body} results={results} onUrlChange={handleUrlChange} onMethodChange={handleMethodChange} onBodyChange={handleBodyChange} onSubmit={handleSubmit}/>
 
-      <Results results={results} />
+      {results && <Results results={results} />}
 
       <History history={history} />
     </>

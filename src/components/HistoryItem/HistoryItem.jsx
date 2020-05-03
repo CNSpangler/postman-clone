@@ -3,12 +3,17 @@ import PropTypes from 'prop-types';
 import ReactJson from 'react-json-view';
 
 const HistoryItem = ({ item }) => {
-  <ReactJson src={item} />;
+  return (
+    <>
+      <ReactJson src={item} />
+      <h1>HISTORY ITEM</h1>
+    </>
+  );
 };
 
 HistoryItem.propTypes = {
-  url: PropTypes.string.isRequired,
-  method: PropTypes.string.isRequired,
+  url: PropTypes.string,
+  method: PropTypes.string,
   body: PropTypes.any
 };
 
