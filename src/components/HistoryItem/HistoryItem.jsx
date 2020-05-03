@@ -12,6 +12,7 @@ const HistoryItem = ({ item }) => {
 };
 
 HistoryItem.propTypes = {
+  item: PropTypes.object,
   url: PropTypes.string,
   method: PropTypes.string,
   body: PropTypes.any

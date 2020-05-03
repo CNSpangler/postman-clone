@@ -10,10 +10,3 @@ export const makeRequest = (url, method, body) => {
     .then(res => res.json())
     .catch(err => console.log(err));
 };
-
-
-// {
-//   "title": "foo",
-//   "body": "bar",
-//   "userId": 1
-// }

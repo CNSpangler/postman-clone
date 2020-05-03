@@ -1,19 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import HistoryItem from '../HistoryItem/HistoryItem.jsx';
+// import HistoryItem from '../HistoryItem/HistoryItem.jsx';
+import ReactJson from 'react-json-view';
 
 const History = ({ history }) => {
-  const historyItems = history.map(item => (
-    <li key={item.title}>
-      <HistoryItem {...item} />
-    </li>
-  ));
-
   return (
-    <ul>
-      {historyItems}
-    </ul>
+    <ReactJson src={history} />
   );
+  // const historyItems = history.map(item => (
+  //   <li key={item.id}>
+  //     <HistoryItem {...item} />
+  //   </li>
+  // ));
+
+  // return (
+  //   <ul>
+  //     <h1>HISTORY</h1>
+  //     {historyItems}
+  //   </ul>
+  // );
 };
 
 History.propTypes = {
