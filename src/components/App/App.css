@@ -17,21 +17,39 @@
 .Form { 
   grid-area: Form;
 
-  .grid-container {
+  .formGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 0.5fr 0.2fr 2.3fr;
     gap: 1px 1px;
-    grid-template-areas: "radioGroup radioGroup radioGroup radioGroup" "url url url url" "body body headers headers";
+    grid-template-areas: "radioGroup radioGroup radioGroup radioGroup" "url url url button" "body body headers headers";
   }
   
-  .radioGroup { grid-area: radioGroup; }
+  .radioGroup { 
+    grid-area: radioGroup;
+    margin-bottom: 50px;
+  }
+
+  .radioButton {
+    width: 15%;
+    margin: 0;
+  }
   
-  .url { grid-area: url; }
+  .body { 
+    grid-area: body;
+  }
   
-  .body { grid-area: body; }
+  .headers { 
+    grid-area: headers;
+  }
   
-  .headers { grid-area: headers; }
+  .url { 
+    grid-area: url;
+  }
+  
+  .button { 
+    grid-area: button;
+  }
 }
 
 .Results { 
