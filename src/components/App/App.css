@@ -1,76 +1,59 @@
-* {
-  box-sizing: border-box;
-}
-
 .mainGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 1.3fr 1.2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   gap: 1px 1px;
-  grid-template-areas: "Header Header Header Header" "History Form Form Form" "History Results Results Results" "History Results Results Results";
+  grid-template-areas: "Header Header Header Header" "History Form Form Form" "History Form Form Form" "History Results Results Results" "History Results Results Results";
 }
 
-.Header { 
-  grid-area: Header;
-}
+.Header { grid-area: Header; }
 
-.Form { 
+.History { grid-area: History; }
+
+.Form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr 2.5fr;
+  gap: 1px 1px;
+  grid-template-areas: "RadioGroup RadioGroup RadioGroup RadioGroup" "url url url button" "body body headers headers";
   grid-area: Form;
+}
 
-  .formGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 2.3fr;
-    gap: 1px 1px;
-    grid-template-areas: "url url url button" "body body headers headers";
-  }
-  
-  .radioGroup { 
-    grid-area: radioGroup;
-    margin-bottom: 50px;
+.RadioGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: ". . . . .";
+  grid-area: RadioGroup;
+}
+
+.radioButton {
+  input[type="radio"] {
+  width: 0;
+  opacity: 0;
+  margin: 0;
   }
 
-  .radioButton {
-    input[type="radio"] {
-    width: 0;
-    opacity: 0;
-    margin: 0;
-    }
+  label {
+    background: red;
+  }
 
-    label {
-      background: red;
-    }
+  label:hover {
+    background: yellow;
+  }
 
-    label:hover {
-      background: yellow;
-    }
-
-    input[type="radio"]:checked + label {
-      background: blue;
-    }
-  }
-  
-  .body { 
-    grid-area: body;
-  }
-  
-  .headers { 
-    grid-area: headers;
-  }
-  
-  .url { 
-    grid-area: url;
-  }
-  
-  .button { 
-    grid-area: button;
+  input[type="radio"]:checked + label {
+    background: blue;
   }
 }
 
-.Results { 
-  grid-area: Results;
-}
+.url { grid-area: url; }
 
-.History { 
-  grid-area: History;
-}
+.button { grid-area: burron; }
+
+.body { grid-area: body; }
+
+.headers { grid-area: headers; }
+
+.Results { grid-area: Results; }

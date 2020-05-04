@@ -4,8 +4,8 @@ import ReactJson from 'react-json-view';
 import styles from '../App/App.css';
 
 const Results = ({ results }) => (
-  <div className={styles.Results}>
-    <ReactJson src={results} />
+  <div>
+    <ReactJson src={results} className={styles.Results} />
   </div>
 );
 

@@ -6,7 +6,7 @@ import styles from '../App/App.css';
 
 const History = ({ history }) => {
   return (
-    <ReactJson src={history} className={styles.History}/>
+    <ReactJson src={history} className={styles.History} />
   );
   // const historyItems = history.map(item => (
   //   <li key={item.id}>

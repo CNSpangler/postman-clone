@@ -27,21 +27,18 @@ const RadioButton = ({ name, value, onChange }) => (
 
 /* eslint-enable react/prop-types */
 const Form = ({ url, onUrlChange, body, onBodyChange, onMethodChange, onSubmit }) => (
-  <div className={styles.Form}>
-    <form onSubmit={onSubmit} className={styles.formGrid}>
-      <input type="text" value={url} placeholder="URL" onChange={onUrlChange} className={styles.url}/>
-      <RadioGroup name="method" onChange={onMethodChange} classname={styles.radioGroup}>
-        <RadioButton value="POST" />
-        <RadioButton value="GET" />
-        <RadioButton value="PATCH" />
-        <RadioButton value="PUT" />
-        <RadioButton value="DELETE" />
-      </RadioGroup>
-      <input type="textarea" value={body} placeholder="Raw JSON Body" onChange={onBodyChange} className={styles.body} />
-      <div className={styles.headers} />
-      <button className={styles.button}>Submit</button>
-    </form>
-  </div>
+  <form onSubmit={onSubmit} className={styles.Form}>
+    <RadioGroup name="method" onChange={onMethodChange} className={styles.RadioGroup}>
+      <RadioButton value="POST" />
+      <RadioButton value="GET" />
+      <RadioButton value="PATCH" />
+      <RadioButton value="PUT" />
+      <RadioButton value="DELETE" />
+    </RadioGroup>
+    <input type="text" value={url} placeholder="URL" onChange={onUrlChange} className={styles.url} />
+    <input type="textarea" value={body} placeholder="Raw JSON Body" onChange={onBodyChange} className={styles.body} />
+    <button className={styles.button}>Submit</button>
+  </form>
 );
 
 Form.propTypes = {
