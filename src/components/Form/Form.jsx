@@ -23,6 +23,7 @@ const RadioButton = ({ name, value, onChange }) => (
     <input id={value} type="radio" name={name} value={value} onChange={onChange} />
     <label htmlFor={value}>{value}</label>
   </div>
+
 );
 
 /* eslint-enable react/prop-types */

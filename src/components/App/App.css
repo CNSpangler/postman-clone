@@ -24,7 +24,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 1px 1px;
-  grid-template-areas: ". . . . .";
+  grid-template-areas: "radioButton radioButton radioButton radioButton radioButton";
   grid-area: RadioGroup;
 }
 
@@ -50,7 +50,7 @@
 
 .url { grid-area: url; }
 
-.button { grid-area: burron; }
+.button { grid-area: button; }
 
 .body { grid-area: body; }
 
