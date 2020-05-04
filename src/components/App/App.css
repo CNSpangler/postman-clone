@@ -12,10 +12,10 @@
 
 .Form {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 0.5fr 2.5fr;
   gap: 1px 1px;
-  grid-template-areas: "RadioGroup RadioGroup RadioGroup RadioGroup" "url url url button" "body body headers headers";
+  grid-template-areas: "RadioGroup RadioGroup RadioGroup RadioGroup RadioGroup" "url url url url button" "body body headers headers headers";
   grid-area: Form;
 }
 
@@ -24,7 +24,6 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 1px 1px;
-  grid-template-areas: "radioButton radioButton radioButton radioButton radioButton";
   grid-area: RadioGroup;
 }
 
@@ -54,6 +53,9 @@
 
 .body { grid-area: body; }
 
-.headers { grid-area: headers; }
+.headers { 
+  grid-area: headers;
+  border: solid 1px rgb(211, 211, 211);
+}
 
 .Results { grid-area: Results; }

@@ -38,6 +38,7 @@ const Form = ({ url, onUrlChange, body, onBodyChange, onMethodChange, onSubmit }
     </RadioGroup>
     <input type="text" value={url} placeholder="URL" onChange={onUrlChange} className={styles.url} />
     <input type="textarea" value={body} placeholder="Raw JSON Body" onChange={onBodyChange} className={styles.body} />
+    <div className={styles.headers}>Placeholder for headers</div>
     <button className={styles.button}>Submit</button>
   </form>
 );
