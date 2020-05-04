@@ -35,15 +35,26 @@
   }
 
   label {
-    background: red;
+    width: 1fr;
+    height: 100%;
   }
 
-  label:hover {
-    background: yellow;
+  input[type="radio"] + label {
+    border: 1px solid #999;
+    background: #EEE;
+    padding: 4px 12px;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    top: 1px;
+  }
+
+  input[type="radio"]:hover + label {
+    background: rgb(223, 171, 76);
   }
 
   input[type="radio"]:checked + label {
-    background: blue;
+    background: #FFF;
+    border-bottom: 1px solid transparent;
   }
 }
 
