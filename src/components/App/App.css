@@ -14,7 +14,7 @@ html {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-row-gap: 7px;
-  gap: 1px 1px;
+  gap: 1px 3px;
   grid-template-areas: "Header Header Header Header" "History Form Form Form" "History Form Form Form" "History Results Results Results" "History Results Results Results";
 }
 
@@ -50,18 +50,20 @@ html {
   grid-template-rows: 1fr;
   gap: 1px 1px;
   grid-area: RadioGroup;
-  position: absolute;
+}
+
+.radioButtons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-content: space-between;
+  justify-items: center;
 }
 
 .radioButton {
   input[type="radio"] {
   width: 0;
   opacity: 0;
-  }
-
-  label {
-    width: auto;
-    position: absolute;
   }
 
   input[type="radio"] + label {
