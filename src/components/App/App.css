@@ -1,14 +1,39 @@
+html {
+  background: #212121;
+}
+
+.belt {
+  background-color: #fac402;
+  height: 25px;
+  width: 100%;
+}
+
 .mainGrid {
   display: grid;
+  margin: 0;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-row-gap: 7px;
   gap: 1px 1px;
   grid-template-areas: "Header Header Header Header" "History Form Form Form" "History Form Form Form" "History Results Results Results" "History Results Results Results";
 }
 
-.Header { grid-area: Header; }
+.Header { 
+  grid-area: Header;
+  background: #212121;
+  color: #fac402;
 
-.History { grid-area: History; }
+  h3 {
+    color: #646464;
+  }
+}
+
+.History { 
+  grid-area: History;
+  background-color: white;
+  overflow: scroll;
+  max-height: 100%; 
+}
 
 .Form {
   display: grid;
@@ -25,18 +50,18 @@
   grid-template-rows: 1fr;
   gap: 1px 1px;
   grid-area: RadioGroup;
+  position: absolute;
 }
 
 .radioButton {
   input[type="radio"] {
   width: 0;
   opacity: 0;
-  margin: 0;
   }
 
   label {
-    width: 1fr;
-    height: 100%;
+    width: auto;
+    position: absolute;
   }
 
   input[type="radio"] + label {
@@ -44,12 +69,10 @@
     background: #EEE;
     padding: 4px 12px;
     border-radius: 4px 4px 0 0;
-    position: relative;
-    top: 1px;
   }
 
   input[type="radio"]:hover + label {
-    background: rgb(223, 171, 76);
+    background: #f5dd41;
   }
 
   input[type="radio"]:checked + label {
@@ -67,6 +90,7 @@
 .headers { 
   grid-area: headers;
   border: solid 1px rgb(211, 211, 211);
+  background: #FFFFFF;
 }
 
 .Results { grid-area: Results; }
