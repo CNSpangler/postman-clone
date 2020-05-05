@@ -1,20 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Form component renders Form  1`] = `
-<div
+<form
   className="Form"
 >
-  <form
-    className="formGrid"
+  <RadioGroup
+    className="RadioGroup"
+    name="method"
   >
-    <input
-      className="url"
-      placeholder="URL"
-      type="text"
-    />
-    <RadioGroup
-      classname="radioGroup"
-      name="method"
+    <div
+      className="radioButtons"
     >
       <RadioButton
         value="POST"
@@ -31,20 +26,27 @@ exports[`Form component renders Form  1`] = `
       <RadioButton
         value="DELETE"
       />
-    </RadioGroup>
-    <input
-      className="body"
-      placeholder="Raw JSON Body"
-      type="textarea"
-    />
-    <div
-      className="headers"
-    />
-    <button
-      className="button"
-    >
-      Submit
-    </button>
-  </form>
-</div>
+    </div>
+  </RadioGroup>
+  <input
+    className="url"
+    placeholder="URL"
+    type="text"
+  />
+  <input
+    className="body"
+    placeholder="Raw JSON Body"
+    type="textarea"
+  />
+  <div
+    className="headers"
+  >
+    Placeholder for headers
+  </div>
+  <button
+    className="button"
+  >
+    Submit
+  </button>
+</form>
 `;

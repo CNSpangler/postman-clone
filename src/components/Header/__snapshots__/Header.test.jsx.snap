@@ -4,8 +4,16 @@ exports[`Header component renders Header 1`] = `
 <div
   className="Header"
 >
+  <h3>
+    na na na na na na na na
+  </h3>
   <h1>
-    Patchman
+    PATCH-MAN
   </h1>
+  <div
+    className="belt"
+  >
+    MY DIV IS YELLOW
+  </div>
 </div>
 `;
