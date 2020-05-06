@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component renders Form  1`] = `
+<form
+  className="Form"
+>
+  <RadioGroup
+    className="RadioGroup"
+    name="method"
+  >
+    <div
+      className="radioButtons"
+    >
+      <RadioButton
+        value="POST"
+      />
+      <RadioButton
+        value="GET"
+      />
+      <RadioButton
+        value="PATCH"
+      />
+      <RadioButton
+        value="PUT"
+      />
+      <RadioButton
+        value="DELETE"
+      />
+    </div>
+  </RadioGroup>
+  <input
+    className="url"
+    placeholder="URL"
+    type="text"
+  />
+  <input
+    className="body"
+    placeholder="Raw JSON Body"
+    type="textarea"
+  />
+  <div
+    className="headers"
+  >
+    Placeholder for headers
+  </div>
+  <button
+    className="button"
+  >
+    Submit
+  </button>
+</form>
+`;

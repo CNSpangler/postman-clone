@@ -1,6 +1,13 @@
 import React from 'react';
+import styles from './App.css';
+import Header from '../Header/Header.jsx';
+import InteractionPane from '../../containers/FormContainer/InteractionPane.jsx';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <div className={styles.mainGrid}>
+      <Header />
+      <InteractionPane />
+    </div>
+  );
 }
-  
