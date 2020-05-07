@@ -30,13 +30,11 @@ const RadioButton = ({ name, value, onChange }) => (
 const Form = ({ url, onUrlChange, body, onBodyChange, onMethodChange, onSubmit }) => (
   <form onSubmit={onSubmit} className={styles.Form}>
     <RadioGroup name="method" onChange={onMethodChange} className={styles.RadioGroup}>
-      <div className={styles.radioButtons}>
-        <RadioButton value="POST" />
-        <RadioButton value="GET" />
-        <RadioButton value="PATCH" />
-        <RadioButton value="PUT" />
-        <RadioButton value="DELETE" />
-      </div>
+      <RadioButton value="POST" />
+      <RadioButton value="GET" />
+      <RadioButton value="PATCH" />
+      <RadioButton value="PUT" />
+      <RadioButton value="DELETE" />
     </RadioGroup>
     <input type="text" value={url} placeholder="URL" onChange={onUrlChange} className={styles.url} />
     <input type="textarea" value={body} placeholder="Raw JSON Body" onChange={onBodyChange} className={styles.body} />

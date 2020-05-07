@@ -11,11 +11,12 @@ html {
 .mainGrid {
   display: grid;
   margin: 0;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 20vh 1fr 1fr;
   grid-row-gap: 7px;
   gap: 1px 3px;
-  grid-template-areas: "Header Header Header Header" "History Form Form Form" "History Form Form Form" "History Results Results Results" "History Results Results Results";
+  grid-template-areas: "Header Header Header Header" "History Form Form Form" "History Results Results Results";
+  align-items: start;
 }
 
 .Header { 
@@ -32,7 +33,7 @@ html {
   grid-area: History;
   background-color: white;
   overflow: scroll;
-  max-height: 100%; 
+  height: 50vh; 
 }
 
 .Form {
@@ -42,6 +43,7 @@ html {
   gap: 1px 1px;
   grid-template-areas: "RadioGroup RadioGroup RadioGroup RadioGroup RadioGroup" "url url url url button" "body body headers headers headers";
   grid-area: Form;
+  max-height: 75vh;
 }
 
 .RadioGroup {
@@ -78,7 +80,7 @@ html {
   }
 
   input[type="radio"]:checked + label {
-    background: #FFF;
+    background: rgb(240, 179, 11);
     border-bottom: 1px solid transparent;
   }
 }
@@ -95,4 +97,8 @@ html {
   background: #FFFFFF;
 }
 
-.Results { grid-area: Results; }
+.Results { 
+  grid-area: Results;
+  height: 75vh;
+  overflow: scroll;
+}

@@ -46,7 +46,7 @@ const InteractionPane = () => {
     <>
       <Form url={url} method={method} body={body} results={results} onUrlChange={handleUrlChange} onMethodChange={handleMethodChange} onBodyChange={handleBodyChange} onSubmit={handleSubmit}/>
 
-      {results && <Results results={results} />}
+      <Results results={results} />
 
       <History history={history} />
     </>
