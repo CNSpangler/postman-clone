@@ -3,26 +3,26 @@ html {
 }
 
 .belt {
-  background-color: #fac402;
   height: 25px;
   width: 100%;
+  background-color: #fac402;
 }
 
 .mainGrid {
   display: grid;
+  align-items: start;
   margin: 0;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 20vh 1fr 1fr;
   grid-row-gap: 7px;
   gap: 1px 3px;
   grid-template-areas: "Header Header Header Header" "History Form Form Form" "History Results Results Results";
-  align-items: start;
 }
 
 .Header { 
   grid-area: Header;
-  background: #212121;
   color: #fac402;
+  background: #212121;
 
   h3 {
     color: #646464;
@@ -31,40 +31,34 @@ html {
 
 .History { 
   grid-area: History;
-  background-color: white;
+  height: 80vh; 
   overflow: scroll;
-  height: 50vh; 
+  background-color: white;
 }
 
 .Form {
   display: grid;
+  grid-area: Form;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 0.5fr 2.5fr;
+  grid-template-rows: 0.8fr 0.5fr 2.5fr;
   gap: 1px 1px;
   grid-template-areas: "RadioGroup RadioGroup RadioGroup RadioGroup RadioGroup" "url url url url button" "body body headers headers headers";
-  grid-area: Form;
-  max-height: 75vh;
+  max-height: 40vh;
 }
 
 .RadioGroup {
   display: grid;
+  grid-area: RadioGroup;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 1px 1px;
-  grid-area: RadioGroup;
 }
 
-.radioButtons {
+.radioButtonContainer {
   position: relative;
-  display: flex;
-  align-items: center;
-  align-content: space-between;
-  justify-items: center;
-}
 
-.radioButton {
   input[type="radio"] {
-  width: 0;
+  width: 100%;
   opacity: 0;
   }
 
@@ -83,13 +77,30 @@ html {
     background: rgb(240, 179, 11);
     border-bottom: 1px solid transparent;
   }
+
+  .radioButton {
+    position: absolute;
+    bottom: 0;
+    width: 85%;
+    height: 30%;
+  }
+
 }
 
 .url { grid-area: url; }
 
-.button { grid-area: button; }
+.button { 
+  grid-area: button;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: rgb(240, 179, 11);
+  background: #646464;
+}
 
-.body { grid-area: body; }
+.body { 
+  grid-area: body;
+  height: 24vh;
+}
 
 .headers { 
   grid-area: headers;
@@ -98,7 +109,8 @@ html {
 }
 
 .Results { 
+  background: #FFFFFF;
   grid-area: Results;
-  height: 75vh;
+  height: 40vh;
   overflow: scroll;
 }

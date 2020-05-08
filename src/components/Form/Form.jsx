@@ -19,9 +19,9 @@ const RadioGroup = ({ name, onChange, children }) => {
 };
 
 const RadioButton = ({ name, value, onChange }) => (
-  <div className={styles.radioButton} >
+  <div className={styles.radioButtonContainer} >
     <input id={value} type="radio" name={name} value={value} onChange={onChange} />
-    <label htmlFor={value}>{value}</label>
+    <label htmlFor={value} className={styles.radioButton}>{value}</label>
   </div>
 
 );

@@ -4,8 +4,8 @@ import ReactJson from 'react-json-view';
 import styles from '../App/App.css';
 
 const Results = ({ results }) => (
-  <div>
-    <ReactJson src={results} className={styles.Results} />
+  <div className={styles.Results}>
+    {results ? <ReactJson src={results} /> : <div>Please make a request above</div>}
   </div>
 );
 
